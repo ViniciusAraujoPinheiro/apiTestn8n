@@ -8,4 +8,4 @@ class ResponseModel(BaseModel):
 
 @app.get("/", response_model=ResponseModel)
 def read_root():
-    return {"response": "Hello, World!"}
+    return {"response": "TESTE da api se tá funionando"}
