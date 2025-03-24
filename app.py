@@ -1,8 +1,11 @@
 from fastapi import FastAPI
-
+from pydantic import BaseModel
 
 app = FastAPI()
 
-@app.get("/")
+class ResponseModel(BaseModel):
+    response: str
+
+@app.get("/", response_model=ResponseModel)
 def read_root():
-    return {"Teste"}
+    return {"response": "Hello, World!"}
